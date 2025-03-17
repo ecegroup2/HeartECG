@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECG Monitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;S
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .ecg-container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        canvas {
+            border: 1px solid #ddd;
+            display: block;
+            margin: 10px 0;
+        }
+        
+        .controls {
+            margin: 10px 0;
+        }
+        
+        button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #27ae60;
+        }
+        
+        .indicators {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        #loading {
+            display: none;
+            color: #3498db;
+        }
+        
+        #bpm {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>ECG Monitor</h1>
+    
+    <div class="ecg-container">
+        <canvas id="ecgCanvas"></canvas>
+        
+        <div class="controls">
+            <button id="startBtn">Load & Start</button>
+            <button id="stopBtn">Stop</button>
+        </div>
+        
+        <div class="indicators">
+            <div id="status">Ready</div>
+            <div id="loading">Loading data...</div>
+            <div id="bpm">BPM: --</div>
+        </div>
+    </div>
+    
+    <script src="ecg-visualization.js"></script>
+</body>
+</html>
